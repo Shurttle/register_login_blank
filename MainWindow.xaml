@@ -1,0 +1,52 @@
+﻿<Window x:Class="register_login_blank.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:register_login_blank"
+        mc:Ignorable="d"
+Title="Authentication Window" Height="400" Width="500">
+    <Grid>
+        <!-- Окно авторизации -->
+        <Grid Name="LoginGrid" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Login:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding LoginData.Login}" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Password:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LoginData.Password}" VerticalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True" />
+            <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Login" Click="Login_Click" HorizontalAlignment="Center"/>
+        </Grid>
+
+         <!--Окно регистрации--> 
+        <Grid Name="RegisterGrid" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Login:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding RegisterData.Login}" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Password:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RegisterData.Password}" VerticalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True" />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Confirm Password:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding RegisterData.ConfirmPassword}" VerticalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True" />
+            <CheckBox Grid.Row="3" Grid.ColumnSpan="2" Content="I agree to share my data online" VerticalAlignment="Center"/>
+            <Button Grid.Row="4" Grid.ColumnSpan="2" Content="Register" Click="Register_Click" HorizontalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>
